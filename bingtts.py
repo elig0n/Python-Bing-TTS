@@ -87,6 +87,9 @@ except:
 
 try:
     destLoc = argsDict['--dest']
+    if os.path.isfile(destLoc):
+        print("Error: A destination file under that name already exists")
+        sys.exit(1)
 except:
     print ""
     print "Error: destination location not specified."
